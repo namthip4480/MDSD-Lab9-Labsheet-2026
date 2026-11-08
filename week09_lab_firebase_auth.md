@@ -36,9 +36,7 @@
 
 > ✅ **Checkpoint 1.1** ถ่ายภาพหน้าจอ Firebase Console ที่แสดงหน้า Project Overview ของโปรเจกต์ที่สร้างเสร็จแล้ว
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่
-```
+<img width="1366" height="768" alt="Screenshot (1720)" src="https://github.com/user-attachments/assets/276c31f4-d915-4b42-a256-a8141d2c14f1" />
 
 ### ขั้นตอนที่ 1.2: 🔧 ทำตามขั้นตอน — ติดตั้งเครื่องมือและเชื่อมโปรเจกต์ด้วย FlutterFire CLI
 
@@ -164,10 +162,16 @@ Future<void> main() async {
 
 > ✅ **Checkpoint 2.1** ทดสอบสมัครสมาชิกด้วย Email ใหม่สำเร็จ ถ่ายภาพหน้าจอ Firebase Console เมนู Authentication → Users ที่แสดงบัญชีที่เพิ่งสมัคร จากนั้นทดสอบกรณีผิดพลาด 2 กรณี คือ (ก) สมัครซ้ำด้วย Email เดิม และ (ข) ใส่รหัสผ่านสั้นเกินไป ถ่ายภาพหน้าจอข้อความ Error ทั้งสองกรณี พร้อมอธิบายว่าโค้ดส่วนใดใน `auth_service.dart` เป็นตัวจัดการแต่ละกรณี
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่ และคำอธิบายของแต่ละกรณี
-```
+<img width="337" height="657" alt="image" src="https://github.com/user-attachments/assets/be35f4e8-5022-4d27-ab87-b98449ae556c" />
 
+<img width="343" height="659" alt="image" src="https://github.com/user-attachments/assets/44540131-462f-4b58-80f7-daf064e5d50f" />
+
+<img width="343" height="659" alt="image" src="https://github.com/user-attachments/assets/3f444270-924d-49dd-ada3-3beb0e152f6b" />
+
+```text
+- auth_service.dart เป็นตัวจัดการแต่ละ error code จาก Firebase แล้วแปลงเป็นข้อความที่เหมาะกับผู้ใช้งาน
+- login_page.dart เป็นตัวแสดงข้อความเหล่านั้นให้ผู้ใช้เห็น
+```
 ---
 
 ## ส่วนที่ 3: เข้าสู่ระบบด้วย Google Sign-In
@@ -383,6 +387,8 @@ avdmanager list avd
 
 > ✅ **Checkpoint 3.1** ทดสอบกดปุ่มเข้าสู่ระบบด้วย Google ด้วยบัญชี Google จริงของคุณ ถ่ายภาพหน้าจอตอนเลือกบัญชี Google และภาพหน้าจอ Firebase Console ที่แสดงว่ามีผู้ใช้ใหม่ Provider เป็น Google เพิ่มเข้ามา อธิบายว่า `idToken` กับ `accessToken` ที่ได้จาก Google นำไปใช้ทำอะไรต่อในขั้นตอนการยืนยันตัวตนกับ Firebase (อ้างอิงหัวข้อ 9.4)
 
+<img width="346" height="656" alt="image" src="https://github.com/user-attachments/assets/ef5c46d5-e0a6-475f-b74d-05aae9848965" />
+
 ```text
 บันทึกรูปผลลัพธ์ที่นี่ และคำอธิบาย
 ```
@@ -521,6 +527,8 @@ Widget build(BuildContext context) {
 เพิ่มปุ่ม "ออกจากระบบ" ใน AppBar ของ `HomePage` ที่เรียก `AuthService().signOut()`
 
 > ✅ **Checkpoint 4.1** ถ่ายภาพหน้าจอ 3 ภาพเรียงกัน คือ (ก) แอปตอนเพิ่งเปิดขึ้นมาครั้งแรกแบบยังไม่ล็อกอิน แสดงหน้า Login (ข) หลังล็อกอินสำเร็จ แอปสลับไปแสดง `MainScaffold` อัตโนมัติโดยไม่ต้องกดอะไรเพิ่ม และ (ค) หลังกด "ออกจากระบบ" แอปสลับกลับไปหน้า Login เอง อธิบายว่าทำไมการใช้ `StreamBuilder` ฟัง `authStateChanges()` จึงทำให้ไม่ต้องเขียนโค้ดสั่ง Navigate ไปมาเอง
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/536f1b9e-548d-45b8-9cf3-423ec8dafe86" />
 
 
 ```text
